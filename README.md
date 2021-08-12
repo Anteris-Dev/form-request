@@ -1,4 +1,4 @@
-# [WIP] Request Data
+# [WIP] Form Request
 
 Inspired by a [Twitter](https://twitter.com/brendt_gd/status/1409808574860214276?s=21) thread, this is a stab at making Form Request data transfer objects. This package is currently WIP.
 

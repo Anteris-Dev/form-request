@@ -98,7 +98,7 @@ class FormRequestDataTest extends TestCase
     public function test_invalid_validation_with_attribute_validators()
     {
         $this->expectException(ValidationException::class);
-        
+
         new AttributesRequest(
             $this->createRequest([
                 'first_name' => 'Aidan',
