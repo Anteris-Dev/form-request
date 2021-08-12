@@ -62,4 +62,9 @@ class FormRequestReflectionProperty
 
         return $validationRulesArray;
     }
+
+    public function getValue(null|object $object): mixed
+    {
+        return $this->property->getValue($object);
+    }
 }

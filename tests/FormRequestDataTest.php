@@ -75,6 +75,81 @@ class FormRequestDataTest extends TestCase
         $this->assertFalse(isset($request->property));
     }
 
+    public function test_to_array()
+    {
+        $request = new CreatePersonRequest(
+            $this->createRequest([
+                'first_name' => 'Larry',
+                'last_name' => 'Johnson',
+                'email' => 'larry.johnson@example.com',
+            ]),
+            $this->createValidationFactory()
+        );
+
+        $this->assertSame(
+            [
+                'first_name' => 'Larry',
+                'last_name' => 'Johnson',
+                'email' => 'larry.johnson@example.com',
+            ],
+            $request->toArray()
+        );
+    }
+
+    public function test_only()
+    {
+        $request = new CreatePersonRequest(
+            $this->createRequest([
+                'first_name' => 'Larry',
+                'last_name' => 'Johnson',
+                'email' => 'larry.johnson@example.com',
+            ]),
+            $this->createValidationFactory()
+        );
+
+        $this->assertSame(
+            ['first_name' => 'Larry'],
+            $request->only('first_name')
+        );
+
+        $this->assertSame(
+            ['last_name' => 'Johnson',],
+            $request->only('last_name')
+        );
+
+        $this->assertSame(
+            ['email' => 'larry.johnson@example.com',],
+            $request->only('email')
+        );
+    }
+
+    public function test_except()
+    {
+        $request = new CreatePersonRequest(
+            $this->createRequest([
+                'first_name' => 'Larry',
+                'last_name' => 'Johnson',
+                'email' => 'larry.johnson@example.com',
+            ]),
+            $this->createValidationFactory()
+        );
+
+        $this->assertSame(
+            ['first_name' => 'Larry'],
+            $request->except('last_name', 'email')
+        );
+
+        $this->assertSame(
+            ['last_name' => 'Johnson',],
+            $request->except('first_name', 'email')
+        );
+
+        $this->assertSame(
+            ['last_name' => 'Johnson', 'email' => 'larry.johnson@example.com',],
+            $request->except('first_name')
+        );
+    }
+
     private function createRequest(array $data = []): Request
     {
         return Request::create('/', 'GET', $data);
