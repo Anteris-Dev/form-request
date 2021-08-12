@@ -1,6 +1,7 @@
 # [WIP] Form Request
 
 [![Tests](https://github.com/Anteris-Dev/form-request/actions/workflows/tests.yaml/badge.svg)](https://github.com/Anteris-Dev/form-request/actions/workflows/tests.yaml)
+[![Style](https://github.com/Anteris-Dev/form-request/actions/workflows/style.yaml/badge.svg)](https://github.com/Anteris-Dev/form-request/actions/workflows/style.yaml)
 
 Inspired by a [Twitter](https://twitter.com/brendt_gd/status/1409808574860214276?s=21) thread, this is a stab at making Form Request data transfer objects. This package is currently WIP.
 
