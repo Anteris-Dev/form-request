@@ -13,7 +13,7 @@ For example:
 use AnterisDev\FormRequest\Attributes\Validation;
 use AnterisDev\FormRequest\FormRequestData;
 
-class CreatePersonRequest
+class CreatePersonRequest extends FormRequestData
 {
     #[Validation('required', 'string', 'max:255')]
     public string $first_name;
