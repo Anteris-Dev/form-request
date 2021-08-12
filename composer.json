@@ -1,0 +1,29 @@
+{
+    "name": "anteris-dev/form-request",
+    "description": "A lightweight form request DTO for Laravel.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aidan Casey",
+            "email": "aidan@caseyhouse.net"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^8.0",
+        "illuminate/http": "^8.0"
+    },
+    "require-dev": {
+        "illuminate/validation": "^8.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AnterisDev\\FormRequest\\": "./src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AnterisDev\\Tests\\FormRequest\\": "./tests"
+        }
+    }
+}
