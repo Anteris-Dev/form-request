@@ -8,7 +8,7 @@ Inspired by a [Twitter](https://twitter.com/brendt_gd/status/1409808574860214276
 ## Creating a Form Request
 To create your request with validation rules, simply extend `AnterisDev\FormRequest\FormRequestData` and add your public properties. To specify the validation rules for a property, pass a string of Laravel validation rules to the `AnterisDev\FormRequest\Attributes\Validation` attribute.
 
-> **Note**: Properties that are not nullable are automatically set to required.
+> **Note**: This package intelligently adds rules like "required" when a property is not nullable and handles adding rules for default PHP types such as "string" for properties that are type hinted as a `string`.
 
 For example:
 
@@ -24,8 +24,9 @@ class CreatePersonRequest extends FormRequestData
     #[Validation('required|string|max:255')]
     public string $last_name;
     
-    // This property is still required because it is not nullable. 
-    #[Validation('string', 'max:255')]
+    // This property is still required because it is not nullable.
+    // This property will also be validated as a string since it has that type. 
+    #[Validation('max:255')]
     public string $email;
 }
 ```
