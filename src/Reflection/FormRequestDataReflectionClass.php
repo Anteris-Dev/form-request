@@ -3,7 +3,6 @@
 namespace Anteris\FormRequest\Reflection;
 
 use Anteris\FormRequest\FormRequestData;
-use Illuminate\Support\Collection;
 use ReflectionClass;
 use ReflectionProperty;
 
@@ -15,7 +14,7 @@ class FormRequestDataReflectionClass
 
     public function __construct(FormRequestData $formRequest)
     {
-        $this->formRequest = $formRequest;
+        $this->formRequest           = $formRequest;
         $this->formRequestReflection = new ReflectionClass($formRequest);
     }
 
@@ -25,11 +24,11 @@ class FormRequestDataReflectionClass
             $this->formRequestReflection->getProperties(
                 ReflectionProperty::IS_PUBLIC
             ),
-            fn($property) => ! $property->isStatic()
+            fn ($property) => ! $property->isStatic()
         );
 
         return array_map(
-            fn($property) => new FormRequestDataReflectionProperty($property),
+            fn ($property) => new FormRequestDataReflectionProperty($property),
             $publicProperties
         );
     }
@@ -37,7 +36,7 @@ class FormRequestDataReflectionClass
     public function getPropertyNames(): array
     {
         return array_map(
-            fn($property): string => $property->getName(),
+            fn ($property): string => $property->getName(),
             $this->getProperties()
         );
     }

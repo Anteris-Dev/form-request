@@ -6,7 +6,6 @@ use Anteris\Tests\FormRequest\Stubs\AttributesRequest;
 use Anteris\Tests\FormRequest\Stubs\CreatePersonRequest;
 use Anteris\Tests\FormRequest\Stubs\NullablePropertyRequest;
 use Anteris\Tests\FormRequest\Stubs\RequiredPropertyNotNullRequest;
-use Anteris\Tests\FormRequest\Stubs\TypeSpecificRequest;
 use Illuminate\Http\Request;
 use Illuminate\Translation\ArrayLoader;
 use Illuminate\Translation\Translator;
@@ -21,8 +20,8 @@ class FormRequestDataTest extends TestCase
         $personRequest = new CreatePersonRequest(
             $this->createRequest([
                 'first_name' => 'Aidan',
-                'last_name' => 'Casey',
-                'email' => 'aidan.casey@example.com',
+                'last_name'  => 'Casey',
+                'email'      => 'aidan.casey@example.com',
             ]),
             $this->createValidationFactory()
         );
@@ -81,9 +80,9 @@ class FormRequestDataTest extends TestCase
     {
         $request = new AttributesRequest(
             $this->createRequest([
-                'first_name' => 'Steven',
-                'age' => 100,
-                'email' => 'steven@example.com',
+                'first_name'         => 'Steven',
+                'age'                => 100,
+                'email'              => 'steven@example.com',
                 'email_confirmation' => 'steven@example.com',
             ]),
             $this->createValidationFactory()
@@ -101,9 +100,9 @@ class FormRequestDataTest extends TestCase
 
         new AttributesRequest(
             $this->createRequest([
-                'first_name' => 'Aidan',
-                'age' => 100,
-                'email' => 'steven@example.com',
+                'first_name'         => 'Aidan',
+                'age'                => 100,
+                'email'              => 'steven@example.com',
                 'email_confirmation' => 'steven@example.com',
             ]),
             $this->createValidationFactory()
@@ -115,8 +114,8 @@ class FormRequestDataTest extends TestCase
         $request = new CreatePersonRequest(
             $this->createRequest([
                 'first_name' => 'Larry',
-                'last_name' => 'Johnson',
-                'email' => 'larry.johnson@example.com',
+                'last_name'  => 'Johnson',
+                'email'      => 'larry.johnson@example.com',
             ]),
             $this->createValidationFactory()
         );
@@ -124,8 +123,8 @@ class FormRequestDataTest extends TestCase
         $this->assertSame(
             [
                 'first_name' => 'Larry',
-                'last_name' => 'Johnson',
-                'email' => 'larry.johnson@example.com',
+                'last_name'  => 'Johnson',
+                'email'      => 'larry.johnson@example.com',
             ],
             $request->toArray()
         );
@@ -136,8 +135,8 @@ class FormRequestDataTest extends TestCase
         $request = new CreatePersonRequest(
             $this->createRequest([
                 'first_name' => 'Larry',
-                'last_name' => 'Johnson',
-                'email' => 'larry.johnson@example.com',
+                'last_name'  => 'Johnson',
+                'email'      => 'larry.johnson@example.com',
             ]),
             $this->createValidationFactory()
         );
@@ -163,8 +162,8 @@ class FormRequestDataTest extends TestCase
         $request = new CreatePersonRequest(
             $this->createRequest([
                 'first_name' => 'Larry',
-                'last_name' => 'Johnson',
-                'email' => 'larry.johnson@example.com',
+                'last_name'  => 'Johnson',
+                'email'      => 'larry.johnson@example.com',
             ]),
             $this->createValidationFactory()
         );

@@ -46,14 +46,14 @@ class FormRequestDataReflectionProperty
 
     public function hasType(string $type): bool
     {
-        $typeNames = array_map(fn($type): string => $type->getName(), $this->getTypes());
+        $typeNames = array_map(fn ($type): string => $type->getName(), $this->getTypes());
 
         return in_array($type, $typeNames);
     }
 
     public function getValidationAttributes(): array
     {
-        $attributes = $this->property->getAttributes();
+        $attributes           = $this->property->getAttributes();
         $validationAttributes = [];
 
         foreach ($attributes as $attribute) {
@@ -69,7 +69,7 @@ class FormRequestDataReflectionProperty
 
     public function getValidationRules(): array
     {
-        $attributes = $this->getValidationAttributes();
+        $attributes           = $this->getValidationAttributes();
         $validationRulesArray = $this->createDefaultValidationRules();
 
         foreach ($attributes as $attribute) {

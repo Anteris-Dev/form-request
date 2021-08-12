@@ -34,7 +34,7 @@ class FormRequestData implements Arrayable
     public function toArray(): array
     {
         $reflection = new FormRequestDataReflectionClass($this);
-        $array = [];
+        $array      = [];
 
         foreach ($reflection->getProperties() as $property) {
             $array[$property->getName()] = $property->getValue($this);

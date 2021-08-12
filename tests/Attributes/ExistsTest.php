@@ -2,7 +2,6 @@
 
 namespace Anteris\Tests\FormRequest\Attributes;
 
-use Anteris\FormRequest\Attributes\Email;
 use Anteris\FormRequest\Attributes\Exists;
 use Illuminate\Validation\Rules\Exists as BaseExists;
 use PHPUnit\Framework\TestCase;
