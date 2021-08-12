@@ -2,6 +2,9 @@
 
 namespace Anteris\FormRequest\Attributes;
 
+use Attribute;
+
+#[Attribute]
 class StartsWith extends Rule
 {
     private array $validStartingStrings;

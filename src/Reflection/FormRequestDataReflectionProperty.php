@@ -8,7 +8,7 @@ use ReflectionNamedType;
 use ReflectionProperty;
 use ReflectionUnionType;
 
-class FormRequestReflectionProperty
+class FormRequestDataReflectionProperty
 {
     public function __construct(private ReflectionProperty $property)
     {
@@ -45,9 +45,32 @@ class FormRequestReflectionProperty
         };
     }
 
+    public function hasType(string $type): bool
+    {
+        $typeNames = array_map(fn($type) => $type->getName(), $this->getTypes());
+
+        return in_array($type, $typeNames);
+    }
+
+    public function getValidationAttributes(): array
+    {
+        $attributes = $this->property->getAttributes();
+        $validationAttributes = [];
+
+        foreach ($attributes as $attribute) {
+            if (! is_subclass_of($attribute->getName(), Rule::class)) {
+                continue;
+            }
+
+            $validationAttributes[] = $attribute;
+        }
+
+        return $validationAttributes;
+    }
+
     public function getValidationRules(): array
     {
-        $attributes = $this->property->getAttributes(Rule::class);
+        $attributes = $this->getValidationAttributes();
         $validationRulesArray = $this->createDefaultValidationRules();
 
         foreach ($attributes as $attribute) {
@@ -70,6 +93,26 @@ class FormRequestReflectionProperty
 
         if (! $this->allowsNull()) {
             $rules[] = 'required';
+        }
+
+        if ($this->hasType('string')) {
+            $rules[] = 'string';
+        }
+
+        if ($this->hasType('int')) {
+            $rules[] = 'int';
+        }
+
+        if ($this->hasType('float')) {
+            $rules[] = 'numeric';
+        }
+
+        if ($this->hasType('array')) {
+            $rules[] = 'array';
+        }
+
+        if ($this->hasType('bool')) {
+            $rules[] = 'boolean';
         }
 
         return $rules;

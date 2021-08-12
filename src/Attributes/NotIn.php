@@ -2,8 +2,10 @@
 
 namespace Anteris\FormRequest\Attributes;
 
+use Attribute;
 use Illuminate\Validation\Rules\NotIn as BaseNotIn;
 
+#[Attribute]
 class NotIn extends Rule
 {
     private array $rules;

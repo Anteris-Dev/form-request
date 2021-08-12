@@ -2,7 +2,7 @@
 
 namespace Anteris\FormRequest;
 
-use Anteris\FormRequest\Reflection\FormRequestReflectionClass;
+use Anteris\FormRequest\Reflection\FormRequestDataReflectionClass;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Validation\Factory;
 use Illuminate\Http\Request;
@@ -43,7 +43,7 @@ class FormRequestData implements Arrayable
 
     public function toArray(): array
     {
-        $reflection = new FormRequestReflectionClass($this);
+        $reflection = new FormRequestDataReflectionClass($this);
         $array = [];
 
         foreach ($reflection->getProperties() as $property) {
@@ -55,7 +55,7 @@ class FormRequestData implements Arrayable
 
     private function resolve(): void
     {
-        $reflection = new FormRequestReflectionClass($this);
+        $reflection = new FormRequestDataReflectionClass($this);
 
         $validated = $this->validationFactory->make(
             $this->request->only($reflection->getPropertyNames()),

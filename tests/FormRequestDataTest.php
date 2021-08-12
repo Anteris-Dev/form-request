@@ -2,9 +2,11 @@
 
 namespace Anteris\Tests\FormRequest;
 
+use Anteris\Tests\FormRequest\Stubs\AttributesRequest;
 use Anteris\Tests\FormRequest\Stubs\CreatePersonRequest;
 use Anteris\Tests\FormRequest\Stubs\NullablePropertyRequest;
 use Anteris\Tests\FormRequest\Stubs\RequiredPropertyNotNullRequest;
+use Anteris\Tests\FormRequest\Stubs\TypeSpecificRequest;
 use Illuminate\Http\Request;
 use Illuminate\Translation\ArrayLoader;
 use Illuminate\Translation\Translator;
@@ -73,6 +75,39 @@ class FormRequestDataTest extends TestCase
         );
 
         $this->assertFalse(isset($request->property));
+    }
+
+    public function test_validation_with_attribute_validators()
+    {
+        $request = new AttributesRequest(
+            $this->createRequest([
+                'first_name' => 'Steven',
+                'age' => 100,
+                'email' => 'steven@example.com',
+                'email_confirmation' => 'steven@example.com',
+            ]),
+            $this->createValidationFactory()
+        );
+
+        $this->assertSame('Steven', $request->first_name);
+        $this->assertSame(100, $request->age);
+        $this->assertSame('steven@example.com', $request->email);
+        $this->assertSame('steven@example.com', $request->email_confirmation);
+    }
+
+    public function test_invalid_validation_with_attribute_validators()
+    {
+        $this->expectException(ValidationException::class);
+        
+        new AttributesRequest(
+            $this->createRequest([
+                'first_name' => 'Aidan',
+                'age' => 100,
+                'email' => 'steven@example.com',
+                'email_confirmation' => 'steven@example.com',
+            ]),
+            $this->createValidationFactory()
+        );
     }
 
     public function test_to_array()

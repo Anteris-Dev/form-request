@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 use ReflectionClass;
 use ReflectionProperty;
 
-class FormRequestReflectionClass
+class FormRequestDataReflectionClass
 {
     private FormRequestData $formRequest;
 
@@ -29,7 +29,7 @@ class FormRequestReflectionClass
         );
 
         return array_map(
-            fn($property) => new FormRequestReflectionProperty($property),
+            fn($property) => new FormRequestDataReflectionProperty($property),
             $publicProperties
         );
     }
@@ -46,6 +46,7 @@ class FormRequestReflectionClass
     {
         $array = [];
 
+        /** @var FormRequestDataReflectionProperty $property */
         foreach ($this->getProperties() as $property) {
             $array[$property->getName()] = $property->getValidationRules();
         }
