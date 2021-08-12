@@ -29,9 +29,6 @@ class FormRequestDataReflectionProperty
         return $this->property->getName();
     }
 
-    /**
-     * @return \ReflectionNamedType[]
-     */
     public function getTypes(): array
     {
         $type = $this->property->getType();
@@ -49,7 +46,7 @@ class FormRequestDataReflectionProperty
 
     public function hasType(string $type): bool
     {
-        $typeNames = array_map(fn($type) => $type->getName(), $this->getTypes());
+        $typeNames = array_map(fn($type): string => $type->getName(), $this->getTypes());
 
         return in_array($type, $typeNames);
     }
