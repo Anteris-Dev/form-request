@@ -15,7 +15,8 @@
     },
     "require-dev": {
         "illuminate/validation": "^8.0",
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^9.0",
+        "vimeo/psalm": "^4.9"
     },
     "autoload": {
         "psr-4": {

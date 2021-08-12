@@ -21,24 +21,14 @@ class FormRequestData implements Arrayable
         return $this->request;
     }
 
-    public function except($keys): array
+    public function except(string ...$keys): array
     {
-        $keys = is_array($keys) ? $keys : func_get_args();
-
-        return array_diff_key(
-            $this->toArray(),
-            array_flip($keys)
-        );
+        return array_diff_key($this->toArray(), array_flip($keys));
     }
 
-    public function only($keys): array
+    public function only(string ...$keys): array
     {
-        $keys = is_array($keys) ? $keys : func_get_args();
-
-        return array_intersect_key(
-            $this->toArray(),
-            array_flip($keys)
-        );
+        return array_intersect_key($this->toArray(), array_flip($keys));
     }
 
     public function toArray(): array

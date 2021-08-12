@@ -9,10 +9,8 @@ class Validation extends Rule
 {
     private array $rules;
 
-    public function __construct($rules)
+    public function __construct(string ...$rules)
     {
-        $rules = is_array($rules) ? $rules : func_get_args();
-
         $rules = $this->expandSeparators($rules);
 
         $this->rules = $rules;

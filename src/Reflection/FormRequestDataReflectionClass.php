@@ -37,7 +37,7 @@ class FormRequestDataReflectionClass
     public function getPropertyNames(): array
     {
         return array_map(
-            fn($property) => $property->getName(),
+            fn($property): string => $property->getName(),
             $this->getProperties()
         );
     }

@@ -3,8 +3,6 @@
 namespace Anteris\FormRequest\Reflection;
 
 use Anteris\FormRequest\Attributes\Rule;
-use Anteris\FormRequest\Attributes\Validation;
-use ReflectionNamedType;
 use ReflectionProperty;
 use ReflectionUnionType;
 
@@ -31,6 +29,9 @@ class FormRequestDataReflectionProperty
         return $this->property->getName();
     }
 
+    /**
+     * @return \ReflectionNamedType[]
+     */
     public function getTypes(): array
     {
         $type = $this->property->getType();
@@ -39,10 +40,11 @@ class FormRequestDataReflectionProperty
             return [];
         }
 
-        return match ($type::class) {
-            ReflectionNamedType::class => [$type],
-            ReflectionUnionType::class => $type->getTypes(),
-        };
+        if ($type instanceof ReflectionUnionType) {
+            return $type->getTypes();
+        }
+
+        return [ $type ];
     }
 
     public function hasType(string $type): bool
@@ -82,7 +84,7 @@ class FormRequestDataReflectionProperty
         return $validationRulesArray;
     }
 
-    public function getValue(null|object $object): mixed
+    public function getValue(object $object): mixed
     {
         return $this->property->getValue($object);
     }

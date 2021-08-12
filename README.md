@@ -22,7 +22,7 @@ class CreatePersonRequest extends FormRequestData
     public string $last_name;
     
     // This property is still required because it is not nullable. 
-    #[Validation(['string', 'max:255'])]
+    #[Validation('string', 'max:255')]
     public string $email;
 }
 ```
