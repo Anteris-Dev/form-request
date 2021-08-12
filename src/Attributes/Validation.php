@@ -5,9 +5,9 @@ namespace Anteris\FormRequest\Attributes;
 use Attribute;
 
 #[Attribute]
-class Validation
+class Validation extends Rule
 {
-    public array $rules;
+    private array $rules;
 
     public function __construct($rules)
     {
@@ -16,6 +16,11 @@ class Validation
         $rules = $this->expandSeparators($rules);
 
         $this->rules = $rules;
+    }
+
+    public function getRules(): array
+    {
+        return $this->rules;
     }
 
     private function expandSeparators(array $rules): array

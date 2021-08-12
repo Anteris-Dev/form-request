@@ -35,3 +35,39 @@ public function store(CreatePersonRequest $request)
     die('Hello ' . $request->first_name . ' ' . $request->last_name);
 }
 ```
+
+## [WIP] Validation Attributes
+To assist with building your validation rules, various attributes are available. These attributes have typed parameters so that it is easy to see their available options.
+
+The following attributes currently exist:
+
+- `Anteris\FormRequest\Attributes\Email`
+- `Anteris\FormRequest\Attributes\Exists`
+- `Anteris\FormRequest\Attributes\In`
+- `Anteris\FormRequest\Attributes\NotIn`
+
+To create your own validation attribute, simply extend `Anteris\FormRequest\Attributes\Rule` and provide the correct output to the `getRules()` method.
+
+### Email Validation
+Do to several options available to the Email validator, the Email validation attribute accepts several flags. These are:
+
+- `Email::RfcValidation`
+- `Email::NoRfcWarningsValidation`
+- `Email::DnsCheckValidation`
+- `Email::SpoofCheckValidation`
+- `Email:FilterEmailValidation`
+
+By default, the mode is set to `Email::RfcValidation`.
+
+See an example of this usage below:
+
+```php
+class ContactInformation extends FormRequestData
+{
+    #[Email]
+    public string $email;
+    
+    #[Email(Email::DnsCheckValidation | Email::SpoofCheckValidation)]
+    public string $email_2;
+}
+```

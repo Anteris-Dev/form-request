@@ -2,6 +2,7 @@
 
 namespace Anteris\FormRequest\Reflection;
 
+use Anteris\FormRequest\Attributes\Rule;
 use Anteris\FormRequest\Attributes\Validation;
 use ReflectionNamedType;
 use ReflectionProperty;
@@ -46,18 +47,13 @@ class FormRequestReflectionProperty
 
     public function getValidationRules(): array
     {
-        $attributes = $this->property->getAttributes(Validation::class);
-        $validationRulesArray = [];
-
-        // Require properties that are not nullable.
-        if (! $this->allowsNull()) {
-            $validationRulesArray[] = 'required';
-        }
+        $attributes = $this->property->getAttributes(Rule::class);
+        $validationRulesArray = $this->createDefaultValidationRules();
 
         foreach ($attributes as $attribute) {
             $attribute = $attribute->newInstance();
 
-            $validationRulesArray = array_merge_recursive($validationRulesArray, $attribute->rules);
+            $validationRulesArray = array_merge_recursive($validationRulesArray, $attribute->getRules());
         }
 
         return $validationRulesArray;
@@ -66,5 +62,16 @@ class FormRequestReflectionProperty
     public function getValue(null|object $object): mixed
     {
         return $this->property->getValue($object);
+    }
+
+    protected function createDefaultValidationRules(): array
+    {
+        $rules = [];
+
+        if (! $this->allowsNull()) {
+            $rules[] = 'required';
+        }
+
+        return $rules;
     }
 }
