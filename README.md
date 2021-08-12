@@ -59,7 +59,7 @@ The following attributes currently exist:
 To create your own validation attribute, simply extend `Anteris\FormRequest\Attributes\Rule` and provide the correct output to the `getRules()` method.
 
 ### Email Validation
-Do to several options available to the Email validator, the Email validation attribute accepts several flags. These are:
+Due to several options available to the Email validator, the Email validation attribute accepts several flags. These are:
 
 - `Email::RfcValidation`
 - `Email::NoRfcWarningsValidation`
