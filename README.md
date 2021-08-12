@@ -45,6 +45,12 @@ The following attributes currently exist:
 - `Anteris\FormRequest\Attributes\Exists`
 - `Anteris\FormRequest\Attributes\In`
 - `Anteris\FormRequest\Attributes\NotIn`
+- `Anteris\FormRequest\Attributes\Same`
+- `Anteris\FormRequest\Attributes\Size`
+- `Anteris\FormRequest\Attributes\StartsWith`
+- `Anteris\FormRequest\Attributes\Timezone`
+- `Anteris\FormRequest\Attributes\Url`
+- `Anteris\FormRequest\Attributes\Uuid`
 
 To create your own validation attribute, simply extend `Anteris\FormRequest\Attributes\Rule` and provide the correct output to the `getRules()` method.
 
