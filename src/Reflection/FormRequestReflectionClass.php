@@ -1,8 +1,8 @@
 <?php
 
-namespace AnterisDev\FormRequest\Reflection;
+namespace Anteris\FormRequest\Reflection;
 
-use AnterisDev\FormRequest\FormRequestData;
+use Anteris\FormRequest\FormRequestData;
 use Illuminate\Support\Collection;
 use ReflectionClass;
 use ReflectionProperty;

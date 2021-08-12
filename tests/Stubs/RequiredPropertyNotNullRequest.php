@@ -1,8 +1,8 @@
 <?php
 
-namespace AnterisDev\Tests\FormRequest\Stubs;
+namespace Anteris\Tests\FormRequest\Stubs;
 
-use AnterisDev\FormRequest\FormRequestData;
+use Anteris\FormRequest\FormRequestData;
 
 class RequiredPropertyNotNullRequest extends FormRequestData
 {

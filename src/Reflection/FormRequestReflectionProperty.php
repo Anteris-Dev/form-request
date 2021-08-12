@@ -1,8 +1,8 @@
 <?php
 
-namespace AnterisDev\FormRequest\Reflection;
+namespace Anteris\FormRequest\Reflection;
 
-use AnterisDev\FormRequest\Attributes\Validation;
+use Anteris\FormRequest\Attributes\Validation;
 use ReflectionNamedType;
 use ReflectionProperty;
 use ReflectionUnionType;

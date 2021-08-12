@@ -1,10 +1,10 @@
 <?php
 
-namespace AnterisDev\Tests\FormRequest;
+namespace Anteris\Tests\FormRequest;
 
-use AnterisDev\Tests\FormRequest\Stubs\CreatePersonRequest;
-use AnterisDev\Tests\FormRequest\Stubs\NullablePropertyRequest;
-use AnterisDev\Tests\FormRequest\Stubs\RequiredPropertyNotNullRequest;
+use Anteris\Tests\FormRequest\Stubs\CreatePersonRequest;
+use Anteris\Tests\FormRequest\Stubs\NullablePropertyRequest;
+use Anteris\Tests\FormRequest\Stubs\RequiredPropertyNotNullRequest;
 use Illuminate\Http\Request;
 use Illuminate\Translation\ArrayLoader;
 use Illuminate\Translation\Translator;

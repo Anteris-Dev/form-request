@@ -1,6 +1,6 @@
 <?php
 
-namespace AnterisDev\FormRequest\Attributes;
+namespace Anteris\FormRequest\Attributes;
 
 use Attribute;
 

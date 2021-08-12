@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "AnterisDev\\FormRequest\\": "./src"
+            "Anteris\\FormRequest\\": "./src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "AnterisDev\\Tests\\FormRequest\\": "./tests"
+            "Anteris\\Tests\\FormRequest\\": "./tests"
         }
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace AnterisDev\FormRequest;
+namespace Anteris\FormRequest;
 
-use AnterisDev\FormRequest\Reflection\FormRequestReflectionClass;
+use Anteris\FormRequest\Reflection\FormRequestReflectionClass;
 use Illuminate\Contracts\Validation\Factory;
 use Illuminate\Http\Request;
 
