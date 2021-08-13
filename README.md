@@ -68,6 +68,8 @@ The following attributes currently exist:
 - `Anteris\FormRequest\Attributes\DigitsBetween`
 - `Anteris\FormRequest\Attributes\Email`
 - `Anteris\FormRequest\Attributes\EndsWith`
+- `Anteris\FormRequest\Attributes\ExcludeIf`
+- `Anteris\FormRequest\Attributes\ExcludeUnless`
 - `Anteris\FormRequest\Attributes\Exists`
 - `Anteris\FormRequest\Attributes\File`
 - `Anteris\FormRequest\Attributes\Filled`
@@ -91,7 +93,18 @@ The following attributes currently exist:
 - `Anteris\FormRequest\Attributes\NotRegex`
 - `Anteris\FormRequest\Attributes\Nullable`
 - `Anteris\FormRequest\Attributes\Numeric`
+- `Anteris\FormRequest\Attributes\Present`
+- `Anteris\FormRequest\Attributes\Prohibited`
+- `Anteris\FormRequest\Attributes\ProhibitedIf`
+- `Anteris\FormRequest\Attributes\ProhibitedUnless`
 - `Anteris\FormRequest\Attributes\Regex`
+- `Anteris\FormRequest\Attributes\Required`
+- `Anteris\FormRequest\Attributes\RequiredIf`
+- `Anteris\FormRequest\Attributes\RequiredUnless`
+- `Anteris\FormRequest\Attributes\RequiredWith`
+- `Anteris\FormRequest\Attributes\RequiredWithAll`
+- `Anteris\FormRequest\Attributes\RequiredWithout`
+- `Anteris\FormRequest\Attributes\RequiredWithoutAll`
 - `Anteris\FormRequest\Attributes\Same`
 - `Anteris\FormRequest\Attributes\Size`
 - `Anteris\FormRequest\Attributes\StartsWith`

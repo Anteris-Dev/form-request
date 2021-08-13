@@ -11,6 +11,7 @@ class CreatePersonRequest extends FormRequestData
     public string $first_name;
 
     #[Validation('required', 'string')]
+
     public string $last_name;
 
     #[Validation('required', 'string', 'email')]
