@@ -45,10 +45,36 @@ To assist with building your validation rules, various attributes are available.
 
 The following attributes currently exist:
 
+- `Anteris\FormRequest\Attributes\CurrentPassword`
+- `Anteris\FormRequest\Attributes\Different`
+- `Anteris\FormRequest\Attributes\Digits`
+- `Anteris\FormRequest\Attributes\DigitsBetween`
 - `Anteris\FormRequest\Attributes\Email`
+- `Anteris\FormRequest\Attributes\EndsWith`
 - `Anteris\FormRequest\Attributes\Exists`
+- `Anteris\FormRequest\Attributes\File`
+- `Anteris\FormRequest\Attributes\Filled`
+- `Anteris\FormRequest\Attributes\GreaterThan`
+- `Anteris\FormRequest\Attributes\GreaterThanOrEqualTo`
+- `Anteris\FormRequest\Attributes\Image`
 - `Anteris\FormRequest\Attributes\In`
+- `Anteris\FormRequest\Attributes\Integer`
+- `Anteris\FormRequest\Attributes\IP`
+- `Anteris\FormRequest\Attributes\IPv4`
+- `Anteris\FormRequest\Attributes\IPv6`
+- `Anteris\FormRequest\Attributes\Json`
+- `Anteris\FormRequest\Attributes\LessThan`
+- `Anteris\FormRequest\Attributes\LessThanOrEqualTo`
+- `Anteris\FormRequest\Attributes\Max`
+- `Anteris\FormRequest\Attributes\Mimes`
+- `Anteris\FormRequest\Attributes\MimeTypes`
+- `Anteris\FormRequest\Attributes\Min`
+- `Anteris\FormRequest\Attributes\MultipleOf`
 - `Anteris\FormRequest\Attributes\NotIn`
+- `Anteris\FormRequest\Attributes\NotRegex`
+- `Anteris\FormRequest\Attributes\Nullable`
+- `Anteris\FormRequest\Attributes\Numeric`
+- `Anteris\FormRequest\Attributes\Regex`
 - `Anteris\FormRequest\Attributes\Same`
 - `Anteris\FormRequest\Attributes\Size`
 - `Anteris\FormRequest\Attributes\StartsWith`
