@@ -4,8 +4,8 @@ namespace Anteris\FormRequest\Attributes;
 
 use Attribute;
 
-#[Attribute]
-class Same extends Rule
+#[Attribute(Attribute::TARGET_PROPERTY)]
+class Same implements Rule
 {
     public function __construct(private string $fieldName)
     {

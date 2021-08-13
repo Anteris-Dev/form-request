@@ -4,8 +4,8 @@ namespace Anteris\FormRequest\Attributes;
 
 use Attribute;
 
-#[Attribute]
-class Uuid extends Rule
+#[Attribute(Attribute::TARGET_PROPERTY)]
+class Uuid implements Rule
 {
     public function getRules(): array
     {

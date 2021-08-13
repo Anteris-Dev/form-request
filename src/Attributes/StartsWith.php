@@ -4,8 +4,8 @@ namespace Anteris\FormRequest\Attributes;
 
 use Attribute;
 
-#[Attribute]
-class StartsWith extends Rule
+#[Attribute(Attribute::TARGET_PROPERTY)]
+class StartsWith implements Rule
 {
     private array $validStartingStrings;
 

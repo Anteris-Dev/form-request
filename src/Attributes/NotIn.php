@@ -5,8 +5,8 @@ namespace Anteris\FormRequest\Attributes;
 use Attribute;
 use Illuminate\Validation\Rules\NotIn as BaseNotIn;
 
-#[Attribute]
-class NotIn extends Rule
+#[Attribute(Attribute::TARGET_PROPERTY)]
+class NotIn implements Rule
 {
     private array $rules;
 

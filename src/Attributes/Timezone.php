@@ -4,8 +4,8 @@ namespace Anteris\FormRequest\Attributes;
 
 use Attribute;
 
-#[Attribute]
-class Timezone extends Rule
+#[Attribute(Attribute::TARGET_PROPERTY)]
+class Timezone implements Rule
 {
     public function getRules(): array
     {

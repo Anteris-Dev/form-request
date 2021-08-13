@@ -4,8 +4,8 @@ namespace Anteris\FormRequest\Attributes;
 
 use Attribute;
 
-#[Attribute]
-class Size extends Rule
+#[Attribute(Attribute::TARGET_PROPERTY)]
+class Size implements Rule
 {
     public function __construct(private int $size)
     {

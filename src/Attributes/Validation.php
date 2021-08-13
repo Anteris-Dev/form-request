@@ -4,8 +4,8 @@ namespace Anteris\FormRequest\Attributes;
 
 use Attribute;
 
-#[Attribute]
-class Validation extends Rule
+#[Attribute(Attribute::TARGET_PROPERTY)]
+class Validation implements Rule
 {
     private array $rules;
 

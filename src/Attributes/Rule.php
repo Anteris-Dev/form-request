@@ -2,7 +2,7 @@
 
 namespace Anteris\FormRequest\Attributes;
 
-abstract class Rule
+interface Rule
 {
-    abstract public function getRules(): array;
+    public function getRules(): array;
 }

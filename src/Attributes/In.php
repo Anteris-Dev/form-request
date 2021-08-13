@@ -5,8 +5,8 @@ namespace Anteris\FormRequest\Attributes;
 use Attribute;
 use Illuminate\Validation\Rules\In as BaseIn;
 
-#[Attribute]
-class In extends Rule
+#[Attribute(Attribute::TARGET_PROPERTY)]
+class In implements Rule
 {
     private array $rules;
 

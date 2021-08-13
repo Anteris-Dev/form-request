@@ -4,8 +4,8 @@ namespace Anteris\FormRequest\Attributes;
 
 use Attribute;
 
-#[Attribute]
-class Email extends Rule
+#[Attribute(Attribute::TARGET_PROPERTY)]
+class Email implements Rule
 {
     const RfcValidation           = 1 << 0;
     const NoRfcWarningsValidation = 1 << 1;
