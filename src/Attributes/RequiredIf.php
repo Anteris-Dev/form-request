@@ -17,7 +17,7 @@ class RequiredIf implements Rule
     public function getRules(): array
     {
         return [
-            "required_if:{$this->field}," . implode(',', $this->values)
+            "required_if:{$this->field}," . implode(',', $this->values),
         ];
     }
 }

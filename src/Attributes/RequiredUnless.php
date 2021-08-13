@@ -17,7 +17,7 @@ class RequiredUnless implements Rule
     public function getRules(): array
     {
         return [
-            "required_unless:{$this->field}," . implode(',', $this->values)
+            "required_unless:{$this->field}," . implode(',', $this->values),
         ];
     }
 }

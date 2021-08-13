@@ -17,7 +17,7 @@ class RequiredWithoutAll implements Rule
     public function getRules(): array
     {
         return [
-            'required_without_all:' . implode(',', $this->fields)
+            'required_without_all:' . implode(',', $this->fields),
         ];
     }
 }
