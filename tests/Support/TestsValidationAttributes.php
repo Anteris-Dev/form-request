@@ -19,7 +19,7 @@ trait TestsValidationAttributes
 
         $this->assertArrayHasKey(Rule::class, $interfaces);
 
-        $attributes = $reflection->getAttributes();
+        $attributes     = $reflection->getAttributes();
         $attributeArray = [];
 
         /** @var ReflectionAttribute $attribute */

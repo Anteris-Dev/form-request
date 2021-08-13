@@ -9,7 +9,7 @@ class MinTest extends TestCase
 {
     public function test_it_returns_correct_rules()
     {
-        $min = new Min(2);
+        $min  = new Min(2);
         $min2 = new Min(8);
 
         $this->assertSame(['min:2'], $min->getRules());

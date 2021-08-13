@@ -17,7 +17,7 @@ class DigitsTest extends TestCase
 
     public function test_it_returns_correct_rules()
     {
-        $digits = new Digits(10);
+        $digits  = new Digits(10);
         $digits2 = new Digits(8);
 
         $this->assertValidationRules(['digits:10'], $digits);

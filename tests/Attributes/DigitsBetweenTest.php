@@ -17,7 +17,7 @@ class DigitsBetweenTest extends TestCase
 
     public function test_it_returns_correct_rules()
     {
-        $digits = new DigitsBetween(1, 5);
+        $digits  = new DigitsBetween(1, 5);
         $digits2 = new DigitsBetween(1, 30);
 
         $this->assertValidationRules(['digits_between:1,5'], $digits);

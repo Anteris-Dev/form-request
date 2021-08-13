@@ -3,7 +3,6 @@
 namespace Anteris\Tests\FormRequest\Attributes;
 
 use Anteris\FormRequest\Attributes\Different;
-use Anteris\FormRequest\Attributes\Rule;
 use Anteris\Tests\FormRequest\Support\TestsValidationAttributes;
 use PHPUnit\Framework\TestCase;
 
@@ -18,7 +17,7 @@ class DifferentTest extends TestCase
 
     public function test_it_returns_correct_rules()
     {
-        $different = new Different('some_field');
+        $different  = new Different('some_field');
         $different2 = new Different('some_other_field');
 
         $this->assertValidationRules(['different:some_field'], $different);

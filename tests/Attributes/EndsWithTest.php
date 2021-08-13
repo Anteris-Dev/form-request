@@ -17,7 +17,7 @@ class EndsWithTest extends TestCase
 
     public function test_it_returns_correct_rules()
     {
-        $endsWith = new EndsWith('ing');
+        $endsWith  = new EndsWith('ing');
         $endsWith2 = new EndsWith('q');
 
         $this->assertValidationRules(['ends_with:ing'], $endsWith);
