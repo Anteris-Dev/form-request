@@ -24,7 +24,7 @@ class CurrentPasswordTest extends TestCase
 
     public function test_it_returns_correct_rules_with_guard()
     {
-        $password = new CurrentPassword('admin');
+        $password  = new CurrentPassword('admin');
         $password2 = new CurrentPassword('user');
 
         $this->assertValidationRules(['current_password:admin'], $password);
