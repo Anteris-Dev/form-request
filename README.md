@@ -45,7 +45,24 @@ To assist with building your validation rules, various attributes are available.
 
 The following attributes currently exist:
 
+- `Anteris\FormRequest\Attributes\Accepted`
+- `Anteris\FormRequest\Attributes\AcceptedIf`
+- `Anteris\FormRequest\Attributes\ActiveUrl`
+- `Anteris\FormRequest\Attributes\After`
+- `Anteris\FormRequest\Attributes\AfterOrEqual`
+- `Anteris\FormRequest\Attributes\Alpha`
+- `Anteris\FormRequest\Attributes\AlphaNumeric`
+- `Anteris\FormRequest\Attributes\AlphaNumericDash`
+- `Anteris\FormRequest\Attributes\Bail`
+- `Anteris\FormRequest\Attributes\Before`
+- `Anteris\FormRequest\Attributes\BeforeOrEqual`
+- `Anteris\FormRequest\Attributes\Between`
+- `Anteris\FormRequest\Attributes\Boolean`
+- `Anteris\FormRequest\Attributes\Confirmed`
 - `Anteris\FormRequest\Attributes\CurrentPassword`
+- `Anteris\FormRequest\Attributes\Date`
+- `Anteris\FormRequest\Attributes\DateEquals`
+- `Anteris\FormRequest\Attributes\DateFormat`
 - `Anteris\FormRequest\Attributes\Different`
 - `Anteris\FormRequest\Attributes\Digits`
 - `Anteris\FormRequest\Attributes\DigitsBetween`
