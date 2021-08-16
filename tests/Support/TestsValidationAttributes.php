@@ -3,6 +3,7 @@
 namespace Anteris\Tests\FormRequest\Support;
 
 use Anteris\FormRequest\Attributes\Rule;
+use PHPUnit\Framework\Assert;
 use ReflectionAttribute;
 use ReflectionClass;
 
@@ -17,7 +18,7 @@ trait TestsValidationAttributes
 
         $interfaces = $reflection->getInterfaces();
 
-        $this->assertArrayHasKey(Rule::class, $interfaces);
+        Assert::arrayHasKey(Rule::class, $interfaces);
 
         $attributes     = $reflection->getAttributes();
         $attributeArray = [];
@@ -27,12 +28,12 @@ trait TestsValidationAttributes
             $attributeArray[$attribute->getName()] = $attribute->getArguments();
         }
 
-        $this->assertArrayHasKey('Attribute', $attributeArray, "Failed asserting that {$class} is an attribute.");
-        $this->assertContains(8, $attributeArray['Attribute'], "Failed asserting that {$class} is a property attribute.");
+        Assert::arrayHasKey('Attribute', $attributeArray, "Failed asserting that {$class} is an attribute.");
+        Assert::assertContains(8, $attributeArray['Attribute'], "Failed asserting that {$class} is a property attribute.");
     }
 
     public function assertValidationRules(array $expectedRules, Rule $rule): void
     {
-        $this->assertSame($expectedRules, $rule->getRules());
+        Assert::assertSame($expectedRules, $rule->getRules());
     }
 }

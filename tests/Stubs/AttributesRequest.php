@@ -2,6 +2,7 @@
 
 namespace Anteris\Tests\FormRequest\Stubs;
 
+use Anteris\FormRequest\Attributes\Dimensions;
 use Anteris\FormRequest\Attributes\Email;
 use Anteris\FormRequest\Attributes\Same;
 use Anteris\FormRequest\Attributes\StartsWith;

@@ -66,6 +66,7 @@ The following attributes currently exist:
 - `Anteris\FormRequest\Attributes\Different`
 - `Anteris\FormRequest\Attributes\Digits`
 - `Anteris\FormRequest\Attributes\DigitsBetween`
+- `Anteris\FormRequest\Attributes\Dimensions`
 - `Anteris\FormRequest\Attributes\Email`
 - `Anteris\FormRequest\Attributes\EndsWith`
 - `Anteris\FormRequest\Attributes\ExcludeIf`
