@@ -13,9 +13,8 @@ class Dimensions implements Rule
         private ?int $minHeight = null,
         private ?int $maxWidth = null,
         private ?int $maxHeight = null,
-        private null|float|string $ratio = null
-    )
-    {
+        private null | float | string $ratio = null
+    ) {
         //
     }
 
@@ -29,13 +28,13 @@ class Dimensions implements Rule
         // Validate the options we were given.
         $options = array_filter(
             [
-                'min_width' => $this->minWidth,
+                'min_width'  => $this->minWidth,
                 'min_height' => $this->minHeight,
-                'max_width' => $this->maxWidth,
+                'max_width'  => $this->maxWidth,
                 'max_height' => $this->maxHeight,
-                'ratio' => $this->ratio,
+                'ratio'      => $this->ratio,
             ],
-            fn($value) => ! is_null($value)
+            fn ($value) => ! is_null($value)
         );
 
         if (empty($options)) {

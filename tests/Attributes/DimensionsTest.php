@@ -31,7 +31,7 @@ class DimensionsTest extends TestCase
     {
         $this->assertValidationRules(
             [
-                'dimensions:min_width=100,min_height=100,max_width=500,max_height=500,ratio=3/2'
+                'dimensions:min_width=100,min_height=100,max_width=500,max_height=500,ratio=3/2',
             ],
             new Dimensions(
                 minWidth: 100,
