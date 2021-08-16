@@ -17,7 +17,7 @@ class ProhibitedUnless implements Rule
     public function getRules(): array
     {
         return [
-            "prohibited_unless:{$this->field}," . implode(',', $this->values)
+            "prohibited_unless:{$this->field}," . implode(',', $this->values),
         ];
     }
 }

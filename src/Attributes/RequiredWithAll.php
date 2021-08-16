@@ -17,7 +17,7 @@ class RequiredWithAll implements Rule
     public function getRules(): array
     {
         return [
-            'required_with_all:' . implode(',', $this->fields)
+            'required_with_all:' . implode(',', $this->fields),
         ];
     }
 }
