@@ -25,7 +25,7 @@ class PasswordDefaultsTest extends TestCase
             ->numbers()
             ->letters();
 
-        BasePassword::defaults(fn() => $expected);
+        BasePassword::defaults(fn () => $expected);
 
         $this->assertValidationRules([ $expected ], new PasswordDefaults());
         $this->assertValidationRulesNot(
@@ -35,7 +35,7 @@ class PasswordDefaultsTest extends TestCase
 
         $newExpected = BasePassword::min(8);
 
-        BasePassword::defaults(fn() => $newExpected);
+        BasePassword::defaults(fn () => $newExpected);
 
         $this->assertValidationRules([ $newExpected ], new PasswordDefaults());
         $this->assertValidationRulesNot([ $expected ], new PasswordDefaults());
