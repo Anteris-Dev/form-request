@@ -5,10 +5,10 @@ namespace Anteris\FormRequest\Attributes;
 use Attribute;
 
 #[Attribute(Attribute::TARGET_PROPERTY)]
-class Present implements Rule
+class ArrayType implements Rule
 {
     public function getRules(): array
     {
-        return ['present'];
+        return ['array'];
     }
 }

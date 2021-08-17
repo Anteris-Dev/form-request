@@ -34,6 +34,11 @@ trait TestsValidationAttributes
 
     public function assertValidationRules(array $expectedRules, Rule $rule): void
     {
-        Assert::assertSame($expectedRules, $rule->getRules());
+        Assert::assertEqualsCanonicalizing($expectedRules, $rule->getRules());
+    }
+
+    public function assertValidationRulesNot(array $unexpectedRules, Rule $rule): void
+    {
+        Assert::assertNotEqualsCanonicalizing($unexpectedRules, $rule->getRules());
     }
 }

@@ -7,12 +7,15 @@ use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Validation\Factory;
 use Illuminate\Http\Request;
 
-class FormRequestData implements Arrayable
+abstract class FormRequestData implements Arrayable
 {
+    private FormRequestDataReflectionClass $reflection;
+
     final public function __construct(
         private Request $request,
         private Factory $validationFactory
     ) {
+        $this->createReflection();
         $this->resolve();
     }
 
@@ -33,7 +36,7 @@ class FormRequestData implements Arrayable
 
     public function toArray(): array
     {
-        $reflection = new FormRequestDataReflectionClass($this);
+        $reflection = $this->getReflection();
         $array      = [];
 
         foreach ($reflection->getProperties() as $property) {
@@ -45,7 +48,7 @@ class FormRequestData implements Arrayable
 
     private function resolve(): void
     {
-        $reflection = new FormRequestDataReflectionClass($this);
+        $reflection = $this->getReflection();
 
         $validated = $this->validationFactory->make(
             $this->request->only($reflection->getPropertyNames()),
@@ -55,5 +58,15 @@ class FormRequestData implements Arrayable
         foreach ($validated as $property => $value) {
             $this->{$property} = $value;
         }
+    }
+
+    private function createReflection(): void
+    {
+        $this->reflection = new FormRequestDataReflectionClass($this);
+    }
+
+    private function getReflection(): FormRequestDataReflectionClass
+    {
+        return $this->reflection;
     }
 }

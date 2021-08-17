@@ -5,7 +5,7 @@ namespace Anteris\FormRequest\Attributes;
 use Attribute;
 
 #[Attribute(Attribute::TARGET_PROPERTY)]
-class Integer implements Rule
+class IntegerType implements Rule
 {
     public function getRules(): array
     {
