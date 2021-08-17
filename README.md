@@ -94,6 +94,8 @@ The following attributes currently exist:
 - `Anteris\FormRequest\Attributes\NotRegex`
 - `Anteris\FormRequest\Attributes\Nullable`
 - `Anteris\FormRequest\Attributes\Numeric`
+- `Anteris\FormRequest\Attributes\Password`
+- `Anteris\FormRequest\Attributes\PasswordDefaults`
 - `Anteris\FormRequest\Attributes\Present`
 - `Anteris\FormRequest\Attributes\Prohibited`
 - `Anteris\FormRequest\Attributes\ProhibitedIf`
